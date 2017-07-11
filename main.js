@@ -198,8 +198,14 @@ for (let i = 0; i < formData.length; i++) {
         select_input.appendChild(option);
       }
 
-
     form.appendChild(select_input);
+
+  } else if (formData[i].type === 'email') {
+    let email_input = document.createElement('input');
+    email_input.id = formData[i].id;
+    email_input.type = formData[i].type;
+    email_input.placeholder = formData[i].label;
+    form.appendChild(email_input);
 
   } else {
     let input = document.createElement('input');
